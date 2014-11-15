@@ -3948,10 +3948,14 @@ function mdTextFloatDirective($mdTheming, $mdUtil) {
           }
 
           scope.inputType = attrs.type || "text";
-          element.removeAttr('type');
+	  scope.formName = attrs.name || "";
 
+          element.removeAttr('type');
+	  element.removeAttr('name'); 
+	  
           // transpose optional `class` settings
           element.attr('class', attrs.class );
+	  
 
         },
         post: $mdTheming
@@ -3960,7 +3964,7 @@ function mdTextFloatDirective($mdTheming, $mdUtil) {
     template:
     '<md-input-group ng-disabled="isDisabled" tabindex="-1">' +
     ' <label for="{{fid}}" >{{label}}</label>' +
-    ' <md-input id="{{fid}}" ng-model="value" type="{{inputType}}"></md-input>' +
+    ' <md-input id="{{fid}}" name="{{formName}}" ng-model="value" type="{{inputType}}"></md-input>' +
     '</md-input-group>'
   };
 }

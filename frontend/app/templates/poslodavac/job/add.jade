@@ -1,0 +1,15 @@
+md-card 
+	form(name="ja")
+		h1 Dodajte posao
+
+		.row 
+			md-text-float(flex, label="Vrsta posla, opis u par reci", ng-model="new.name")
+
+		.row 
+			md-text-float(label="Nadoknada za posao, novac koji ce te dati za uradjen posao", name="credit", ng-model="new.credit", valid-number)
+			h3.text-info Vi se obavezujete da ovu sumu isplatite radniku kojeg odaberete da uradi taj posao. 
+		.row 
+			md-text-float(label="Mesto i vreme izvrsenja posla, kada vam to treba uradjeno?", ng-model="new.spaceTime")
+			h4.text-muted Budite deskriptivni i iskreni! 
+
+
