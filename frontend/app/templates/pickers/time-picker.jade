@@ -1,0 +1,11 @@
+form 
+	p Unesite tacno vreme i/ili mesto kada zelite da se zadatak izvede. 
+	.row 
+		md-text-float(label="Datum", ng-model="model.date")
+
+	.row 
+		md-text-float(label="Sati", ng-model="model.time") 
+
+		md-radio-group(ng-hide="model.time > 12", ng-model="model.phase")
+			md-radio-button(value="AM") Prepodne
+			md-radio-button(value="PM") Poslepodne 

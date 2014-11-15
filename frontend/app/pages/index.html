@@ -5,17 +5,13 @@
     <link rel="stylesheet" type="text/css" href="/css/app.css" media="all" />
     <link rel="stylesheet" type="text/css" href="/css/app.less.css" media="all" />
   </head>
-  <body layout="vertical" layout-align="start center">
-			<div layout="horizontal">
-				<md-button class="md-fab" ui-sref="home" >Home</md-button>
-				<div flex>
-					<div layout="vertical">
-						<md-button class="md-primary" ui-sref="poslodavac.job.add">Poslodavac home</md-button>
-						<md-button class="md-warn" ui-sref="radnik.home" >Radnik home</md-button>
-					</div>
-				</div>
-			</div>
-			<ui-view flex /> 
-    	<script type="text/javascript" src="/js/app.js"></script>
+  <body layout="vertical" layout-align="start">
+	<md-button md-theme="red" class="md-fab" ui-sref="home" >Home</md-button>
+	<div layout="vertical">
+		<md-button md-theme="blue" class="md-primary" ui-sref="poslodavac.home">Poslodavac home</md-button>
+		<md-button md-theme="red" class="md-primary" ui-sref="radnik.home" >Radnik home</md-button>
+	</div>
+	<ui-view /> 
+	<script type="text/javascript" src="/js/app.js"></script>
   </body>
 </html>

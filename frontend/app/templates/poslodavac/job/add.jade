@@ -1,23 +1,51 @@
 md-card 
+	div(layout="horizontal", layout-align="end")
+		md-button.md-primary(ui-sref="poslodavac.home") Ne zelim sada da obavljujem posao
 	form(name="ja")
 		h1 Dodajte posao
 
 		.row 
 			p Naziv
 			md-text-float(flex, label="Vrsta posla, opis u par reci", ng-model="new.name")
-			md-divider
 		.row 
 			p Novac
 			md-text-float(label="Nadoknada za posao, novac koji ce te dati za uradjen posao, pricamo o cifri, u dinarima", name="credit", ng-model="new.credit", valid-number)
 			h5 Vi se obavezujete da ovu sumu isplatite radniku kojeg odaberete da uradi taj posao. 
 			md-divider
 		.row 
-			md-text-float.full-width(label="Mesto i vreme izvrsenja posla, kada vam to treba uradjeno?", ng-model="new.spaceTime")
-			h5 Budite deskriptivni i iskreni! 
+			md-text-float.full-width(label="Mesto i vreme izvrsenja posla, kada vam to treba uradjeno?", ng-model="new.spaceTimeDesc")
+			p Ako znate tacne podatke unesite ih ispod
 
+			md-tabs(selected="tools.selected", center)
+				md-tab#time(aria-controls="time-cont")
+					i.fa.fa-calendar.fa-2x 
+					| &nbsp;Vreme
+
+
+				md-tab#location(aria-controls="location-cont")
+					i.fa.fa-map-marker.fa-2x 
+					| &nbsp; Mesto
+
+			ng-switch.tabpanel-container(on="tools.selected")	
+				#time-cont(role="tabpanel", ng-switch-when="0", aria-labeledby="time")
+					time-picker(time-model="new.time")
+				#location-cont(role="tabpanel", ng-switch-when="1", aria-labeledby="location")
+					location-picker(location-model="new.location")
 		.row 
 			md-text-float.full-width(label="Dodatne detaljne instrukcije radniku, ove infromacije radnik dobija posto ste odabrali nekog da zavrsi zadatak", ng-model="new.description")
 
+		h5 Pomozite sami sebi, oglasite ponudu preko vaseg Twitter i/ili Facebook naloga.
+		.row(layout="horizontal", layout-align="space-around")
+			md-button.md-fab.md-primary
+				i.fa.fa-twitter.fa-2x
+			md-button.md-fab.md-primary(md-theme="indigo")
+				i.fa.fa-facebook.fa-2x 		
+
 		.row 
-			md-button.md-fab.md-primary TW
-			md-button.md-fab(theme="purple") FB
+			p Ovako se zapocinje jedna sjajna saradnja! :) 
+
+			md-button.md-primary.md-raised(md-theme="green", layout-fill, ui-sref="poslodavac.home")
+				i.fa.fa-check-square.fa-3x
+				| &nbsp;Objavi posao! 
+
+

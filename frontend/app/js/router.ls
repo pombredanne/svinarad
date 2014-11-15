@@ -12,9 +12,11 @@ angular.module \appls .config ($stateProvider, $urlRouterProvider) !->
 	state \poslodavac.job \/posao \poslodavac/job/base.html \home-controller
 	state \poslodavac.job.add \/novi \poslodavac/job/add.html \home-controller
 
+	state \poslodavac.home \/start \poslodavac/home.html \poslodavac-home-ctrl
+
 	state \radnik \/radnik \radnik/base.html \home-controller
 	state \radnik.signup \/prijava \radnik/signup.html \home-controller
-	state \radnik.dom \/dom \radnik/home.html \home-controller
+	state \radnik.home \/dom \radnik/home.html \home-controller
 
 	$urlRouterProvider.otherwise \/home
 

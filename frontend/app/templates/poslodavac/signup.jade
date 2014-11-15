@@ -1,17 +1,15 @@
-h3 Ovo je zapravo forma koju treba da radimo!
-md-content
-	form
-		.row
-			md-text-float(label="Naziv", ng-model="signup.name")
-		.row
-			md-text-float(label="Email", type="email", ng-model="signup.name")
+form
+	.row
+		md-text-float(label="Naziv", ng-model="signup.name")
+	.row
+		md-text-float(label="Email", type="email", ng-model="signup.email")
 
-		.row
-			h3 Sirfu mozete da namestite kasnije :) 
+	.row
+		h3 Sirfu mozete da namestite kasnije :) 
 
 
-		.row 
-			
+	.row 
+		
 
-		.row 
-			md-button.md-primary(ui-sref="poslodavac.job.add") Prijavite se
+	.row 
+		md-button.md-primary(ui-sref="poslodavac.job.add") Prijavite se
