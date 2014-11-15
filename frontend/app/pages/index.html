@@ -5,8 +5,9 @@
     <link rel="stylesheet" type="text/css" href="/css/app.css" media="all" />
     <link rel="stylesheet" type="text/css" href="/css/app.less.css" media="all" />
   </head>
-  <body layout="horizontal" layout-align="center">
-	<ui-view /> 
+  <body layout="vertical" layout-align="start center">
+			<md-button class="md-fab" ui-sref="home" >Home</md-button>
+			<ui-view flex /> 
     	<script type="text/javascript" src="/js/app.js"></script>
   </body>
 </html>

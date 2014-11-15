@@ -3,13 +3,16 @@ md-card
 		h1 Dodajte posao
 
 		.row 
+			p Naziv
 			md-text-float(flex, label="Vrsta posla, opis u par reci", ng-model="new.name")
+			md-divider
+		.row 
+			p Novac
+			md-text-float(label="Nadoknada za posao, novac koji ce te dati za uradjen posao, pricamo o cifri, u dinarima", name="credit", ng-model="new.credit", valid-number)
+			h5 Vi se obavezujete da ovu sumu isplatite radniku kojeg odaberete da uradi taj posao. 
+			md-divider
+		.row 
+			md-text-float.full-width(label="Mesto i vreme izvrsenja posla, kada vam to treba uradjeno?", ng-model="new.spaceTime")
+			h5 Budite deskriptivni i iskreni! 
 
 		.row 
-			md-text-float(label="Nadoknada za posao, novac koji ce te dati za uradjen posao", name="credit", ng-model="new.credit", valid-number)
-			h3.text-info Vi se obavezujete da ovu sumu isplatite radniku kojeg odaberete da uradi taj posao. 
-		.row 
-			md-text-float(label="Mesto i vreme izvrsenja posla, kada vam to treba uradjeno?", ng-model="new.spaceTime")
-			h4.text-muted Budite deskriptivni i iskreni! 
-
-

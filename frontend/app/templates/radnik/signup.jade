@@ -1,0 +1,16 @@
+form(name="radreg", role="form")
+	h4 Osnovne stvari 
+	.row 
+		md-text-float(label="Ime", ng-model="signup.firstName")
+		md-text-float(label="Prezime", ng-model="signup.lastName")
+	.row 
+		md-text-float(label="Email", ng-model="signup.email", type="email")
+	.row 
+		p Sifru mozete namestiti kasnije ;)
+	.row
+		md-text-float(label="Grad, region u kom zelite da radite", ng-model="signup.location") 
+	.row 
+		md-text-float(label="Broj telefona, da lakse komunicirate sa poslodavcem", ng-model="signup.phone", valid-number)
+	.row
+		p Prijavljivanjem se slazete da vase podatke prikazemo poslodavcu sa kojim stupite u posao 
+		md-button.md-primary(ui-sref="radnik.dom") Vazi, prijavljujem se! 
