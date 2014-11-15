@@ -6,7 +6,15 @@
     <link rel="stylesheet" type="text/css" href="/css/app.less.css" media="all" />
   </head>
   <body layout="vertical" layout-align="start center">
-			<md-button class="md-fab" ui-sref="home" >Home</md-button>
+			<div layout="horizontal">
+				<md-button class="md-fab" ui-sref="home" >Home</md-button>
+				<div flex>
+					<div layout="vertical">
+						<md-button class="md-primary" ui-sref="poslodavac.job.add">Poslodavac home</md-button>
+						<md-button class="md-warn" ui-sref="radnik.home" >Radnik home</md-button>
+					</div>
+				</div>
+			</div>
 			<ui-view flex /> 
     	<script type="text/javascript" src="/js/app.js"></script>
   </body>
