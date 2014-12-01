@@ -1,9 +1,13 @@
 h3 Tvoj Dom
 
-div(layout="horizontal")
-	div(flex)
-		h2 Dostupni poslovi
-		
-// 	
-	div(flex)
-		h3 Poslovi koje vec radis 
+div(layout="column")
+
+	div(layout="row")
+		div(ui-view="assigned")
+
+	div(layout="row")
+		div(ui-view="applied")
+		div(ui-view="open")
+
+md-divider 
+

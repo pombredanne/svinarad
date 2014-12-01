@@ -1,0 +1,40 @@
+div(layout="column")
+	p Posao br: {{ item.id }}
+	div(layout-gt-sm="row", layout-sm="column")
+		div(flex-gt-sm="66")
+			h1 {{ item.name }}
+		div(flex-gt-sm="33")
+			md-button.md-raised.md-primary(md-theme="green") 
+				i.fa.fa-check-square.fa-3x
+				| &nbsp;&nbsp;
+				| Prijavi se!
+
+	md-divider
+
+	div(flex, layout="row")
+		div(md-theme="blue", flex)
+			p Poslodavac:
+			h2.md- Scooby McGrudge
+		div(flex, md-theme="red")
+			p Radnik:
+			//- h2 Alija Sirotanovic
+			p Jos nije izabran
+	
+	md-divider
+	
+	div(flex, layout="row")
+		div(flex="33")
+			h2 Status:
+			{{ item.status }}
+
+		div(flex="66", layout="column")
+			div(layout="row")
+				div(flex)
+					h6 Lova
+					h1 {{ item.credit }}
+				div(flex)
+					h6 Gde i kad
+					p {{ item.details }}
+			div
+				h6 Instrukcije
+				{{ item.instructions }}

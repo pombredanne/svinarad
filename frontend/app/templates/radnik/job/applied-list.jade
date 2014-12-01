@@ -1,0 +1,8 @@
+
+div(ng-show="list.length", flex)
+	h2 Poslovi na koje ste se prijavili:
+	md-button
+		i.fa.fa-info-circle 
+		| &nbsp; Sta sad?
+
+worker-job(job="x", ng-repeat="x in list")

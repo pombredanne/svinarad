@@ -1,10 +1,40 @@
-angular.module \appls .factory \jobs (Restangular) -> Restangular.all \jobs
-
 angular.module \appls .service \ownerAPI (jobs) !->
-	console.log jobs.get-list \owned
-	@get-jobs = -> jobs.get-list \owned
+	@job = jobs
+
+angular.module \appls .directive \employerJob -> do
+	restrict: \E
+	templateUrl: \poslodavac/job/item.html 
+	scope: {
+		job: \=
+	}
 
 
-angular.module \appls .controller \poslodavac-home-ctrl ($scope, ownerAPI) !->
-	ownerAPI.get-jobs!then !-> $scope.owned = it
+ 
+angular.module \appls .config ($state-provider, $url-router-provider, state-helper-provider) !->
+	state = state-helper-provider.state
+	
+	state \poslodavac \/poslodavac \poslodavac/base.html \home-controller
+	state \poslodavac.signup \/prijava \poslodavac/signup.html \home-controller
+
+
+	$state-provider.state \poslodavac.home (do 
+		url: \/start
+		templateUrl: \poslodavac/home.html
+		controller: \list-ctrl
+		resolve: 
+			list: (ownerAPI) -> ownerAPI.job.owned! 
+	)
+
+
+	state \poslodavac.job \/posao \poslodavac/job/base.html \home-controller
+	
+	state \poslodavac.job.add \/novi \poslodavac/job/add.html \home-controller
+
+	$state-provider.state \poslodavac.job.detail (do
+		url: '/:id'
+		templateurl: \poslodavac/job/detail.html 
+		controller: \detail-ctrl
+		resolve:
+			source: (ownerapi) -> ownerapi.job.detail
+	)
 

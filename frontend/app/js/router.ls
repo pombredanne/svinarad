@@ -1,22 +1,6 @@
 {tail, map, id} = require \prelude-ls
-angular.module \appls .config ($stateProvider, $urlRouterProvider) !->
 
-	state-options = (url, templateUrl, controller) -> {url, templateUrl, controller}
-	state = (name) ->
-		$stateProvider.state name, state-options.apply null, tail map id, arguments
-
+angular.module \appls .config ($state-provider, $url-router-provider, state-helper-provider) !->
+	state = state-helper-provider.state
+	$url-router-provider.otherwise \/home
 	state \home \/home \home.html \home-controller
-	state \poslodavac \/poslodavac \poslodavac/base.html \home-controller
-	state \poslodavac.signup \/prijava \poslodavac/signup.html \home-controller
-
-	state \poslodavac.job \/posao \poslodavac/job/base.html \home-controller
-	state \poslodavac.job.add \/novi \poslodavac/job/add.html \home-controller
-
-	state \poslodavac.home \/start \poslodavac/home.html \poslodavac-home-ctrl
-
-	state \radnik \/radnik \radnik/base.html \home-controller
-	state \radnik.signup \/prijava \radnik/signup.html \home-controller
-	state \radnik.home \/dom \radnik/home.html \home-controller
-
-	$urlRouterProvider.otherwise \/home
-

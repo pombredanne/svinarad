@@ -2,6 +2,10 @@
 	md-content
 		h1 Dobrodosli na mesto na kome se radi! 
 
+		div(layout="horizontal", layout-align="end start")
+			md-button(ui-sref="radnik.home") Radnik
+			md-button(ui-sref="poslodavac.home") Poslodavac
+
 		h1 Svi na rad.com 
 		div(layout="horizontal", layout-align="center")
 			md-button.md-raised.md-primary(ui-sref="poslodavac.signup") Prijavite se Poslodavci

@@ -1,0 +1,10 @@
+md-card: md-content
+	md-button.md-primary(ui-sref="radnik.job.detail({id: job.id})"): h3 {{ job.name }} 
+	h5.text-primary {{ job.credit }}
+	section(layout="row", layout-phone="column", layout-align="space-around")
+		md-button.md-primary.md-raised(md-theme="green", ui-sref="radnik.job.apply({id: job.id})")
+			h3 
+			| Prijavi se &nbsp;
+			i.fa.fa-check-square-o.fa-2x
+
+		md-button.md-primary Detalji o poslu
