@@ -1,2 +1,17 @@
 h3 Poslovi koje ste postavili
-employer-job(job="job", ng-repeat="job in list")
+
+div(layout="row", layout-align="end")
+	md-button.md-primary.md-raised.md-fab(md-theme="green")
+		i.fa.fa-plus.fa-2x
+		md-tooltip(md-visible="true") Ode objavljujete nove poslove
+	
+
+div.md-padding(layout="column")
+	div(layout="row", layout-sm="column")
+		div(ui-view="open")
+
+	div(layout="row", layout-sm="column")
+		div(ui-view="done")
+		
+md-divider 
+

@@ -1,4 +1,3 @@
-
 angular.module \appls .controller \list-ctrl ($scope, list) !->
 	$scope.list = list 
 

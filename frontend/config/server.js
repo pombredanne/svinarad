@@ -74,6 +74,10 @@ module.exports = {
 	  	 	res.json(makeJobs(1, 8));
     	});
 
+    	app.get('/api/job/done', function (req, res) {
+    		res.json(makeJobs(2, 3));
+    	});
+
     	app.get('/api/job/open', function(req, res) {
 	  	 	res.json(makeJobs(2, 12));
     	});

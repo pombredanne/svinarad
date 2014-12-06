@@ -7,4 +7,5 @@ angular.module \appls .factory \jobs (Restangular) ->
 		open: -> j.customGET \open
 		applied: -> j.customGET \applied
 		assigned: -> j.customGET \assigned
+		done: -> j.customGET \done
 
