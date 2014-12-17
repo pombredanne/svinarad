@@ -5,10 +5,7 @@ angular.module \appls .directive \employerJob -> do
 	restrict: \E
 	templateUrl: \poslodavac/job/item.html 
 	scope: 
-		job: \=
-	
-
-
+		item: \=job
  
 angular.module \appls .config ($state-provider, $url-router-provider, state-helper-provider) !->
 	$url-router-provider.when \/poslodavac/good \/poslodavac/good/start
@@ -55,11 +52,30 @@ angular.module \appls .config ($state-provider, $url-router-provider, state-help
 		templateUrl: \poslodavac/job/add.html
 	)
 
+
+	dest = -> 
+		| 0 => \drafting
+		# | 1 => \worker-employed
+		# | 2 => \job-done
+		# | 3 => \worker-payed
+		# | 4 => \finished
+		| otherwise => \drafting
+
 	state \poslodavac.job.detail (do
-		url: \/:id
-		templateurl: \poslodavac/job/detail.html 
-		controller: \detail-ctrl
+		url: '/:id'
+		templateUrl: \poslodavac/job/detail.html 
+
+		controller: ($scope, item, $state) ->
+			$scope.item = item;
+			$state.go ".#{dest item.status}"
+		
 		resolve:
-			source: (ownerAPI) -> ownerAPI.job.detail
+			item: (ownerAPI, $state-params) -> ownerAPI.job.detail $state-params.id .get!
 	)
 
+	state \poslodavac.job.detail.drafting (do 
+		templateUrl: \poslodavac/job/draft.html
+		controller: \list-ctrl
+		resolve:
+			list: (ownerAPI, $state-params) -> ownerAPI.job.applicants $state-params.id
+	)

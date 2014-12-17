@@ -1,0 +1,9 @@
+md-subheader.md-primary Prijavljeni radnici
+md-list
+	md-item(ng-repeat="w in list")
+		md-item-content
+			div.md-tile-left
+				img.face(src="/img/avatar.jpg")
+			div.md-tile-content
+				h3 {{ w.fullname }}
+				h4 {{ w.rating }}

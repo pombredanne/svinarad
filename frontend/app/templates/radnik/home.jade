@@ -2,12 +2,12 @@ h3 Tvoj Dom
 
 div(layout="column")
 
-	div(layout="row", layout-sm="column")
-		div(ui-view="assigned")
+	div(layout="row")
+		div(ui-view="assigned", flex)
 
 	div(layout="row", layout-sm="column")
-		div(ui-view="applied")
-		div(ui-view="open")
+		div(ui-view="applied", flex)
+		div(ui-view="open", flex)
 
 md-divider 
 

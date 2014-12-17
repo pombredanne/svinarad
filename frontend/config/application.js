@@ -79,7 +79,7 @@ module.exports = function(lineman) {
 				tasks: ["ngtemplates", "concat_sourcemap:js"]
 			},	
 			options: {
-				livereload: 35729
+				livereload: 35728
 			}
 		},
 		prependTasks: {

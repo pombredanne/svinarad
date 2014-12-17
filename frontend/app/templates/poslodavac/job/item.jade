@@ -1,6 +1,6 @@
-.md-whiteframe-z1
+.md-whiteframe-z1(ui-sref="poslodavac.job.detail({id: item.id})")
 	md-content
-		h1 Job: {{ job.name }}! 
-		h4 {{ job.credit }} din. 
-		md-button.md-primary(ui-sref="poslodavac.job.detail({id: job.id})") Detalji
+		h1 Job: {{ item.name }}! 
+		h4 {{ item.credit }} din. 
+		md-button.md-primary(ui-sref="poslodavac.job.detail({id: item.id})") Detalji
 	md-divider

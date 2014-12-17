@@ -67,4 +67,4 @@ angular.module \appls .config ($state-provider, $url-router-provider, state-help
 		controller: \detail-ctrl
 		resolve:
 			source: (workerAPI) -> workerAPI.detail
-	)
+		)

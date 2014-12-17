@@ -1,2 +1,27 @@
-h1 Sellah {{ item.name }}
+div(layout="column")
+	div
+		p Posao br: {{ item.id }}
+		h1 {{ item.name }}
 
+	div(layout="row", layout-sm="column")
+		div(layout="column", flex-gt-sm="15")
+			h5 Status
+
+
+		div(layout="column", flex)
+			ui-view
+
+		div(layout="column", flex-gt-sm="30")
+			md-card
+				h5 Nadokanada
+				h2 {{ item.credit }} din.
+
+			md-card
+				h5 Kad i gde 
+
+				h3 {{ item.date }}
+				p {{ item.details }}
+
+			md-card
+				h5 Opis
+				p {{ item.instructions }}
