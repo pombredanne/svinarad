@@ -3,7 +3,7 @@ angular.module \appls .service \workerAPI (jobs, Restangular) !->
 	@detail = jobs.detail
 	@applied = jobs.applied 
 	@assigned-jobs = jobs.assigned
-	@apply = -> it.customPost \/apply
+	@apply = jobs.apply-for
 
 
 angular.module \appls .directive \workerJob -> do
@@ -71,6 +71,7 @@ angular.module \appls .config ($state-provider, $url-router-provider, state-help
 				controller: \modal-action-ctrl		
 				locals: 
 					action: (item) -> item.customPOST {} \apply 
+
 	)
 
 

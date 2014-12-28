@@ -10,5 +10,5 @@ angular.module \appls .factory \jobs (Restangular) ->
 		assigned: -> j.customGET \assigned
 		done: -> j.customGET \done
 		applicants: -> jo it .get-list \applicants
-
+		apply-for: -> it.customPOST {} \apply
 

@@ -4,11 +4,14 @@ div(layout="column")
 		div(flex-gt-sm="66")
 			h1 {{ item.name }}
 		div(flex-gt-sm="33")
-			md-button.md-raised.md-primary(md-theme="green", ng-click="action()") 
-				i.fa.fa-check-square.fa-3x
-				| &nbsp;&nbsp;
-				| Prijavi se!
-
+			div(ng-switch="item.status")
+				div(ng-switch-when="0")
+					md-button.md-raised.md-primary(md-theme="green", ng-click="action()") 
+						i.fa.fa-check-square.fa-3x
+						| &nbsp;&nbsp;
+						| Prijavi se!
+				div(ng-switch-when="1")
+					h2 Posao je poceo 
 	div(flex, layout="column")
 		ui-view
 

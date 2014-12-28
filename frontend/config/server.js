@@ -150,7 +150,7 @@ module.exports = {
 	  	 	res.json(makeJobs(1, 1, js.worker_engaged));
     	});
     	
-    	get(app, '/api/job/:id', job_w_staus(getStatus()));
+    	get(app, '/api/job/:id', job_w_staus(js.worker_engaged));
 
     	post(app, '/api/job/:id/apply', job_w_staus(getStatus()));
 
