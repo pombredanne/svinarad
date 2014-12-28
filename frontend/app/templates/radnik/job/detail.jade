@@ -4,20 +4,22 @@ div(layout="column")
 		div(flex-gt-sm="66")
 			h1 {{ item.name }}
 		div(flex-gt-sm="33")
-			md-button.md-raised.md-primary(md-theme="green") 
+			md-button.md-raised.md-primary(md-theme="green", ng-click="action()") 
 				i.fa.fa-check-square.fa-3x
 				| &nbsp;&nbsp;
 				| Prijavi se!
+
+	div(flex, layout="column")
+		ui-view
 
 	md-divider
 
 	div(flex, layout="row")
 		div(md-theme="blue", flex)
 			p Poslodavac:
-			h2.md- Scooby McGrudge
+			h2 Scooby McGrudge
 		div(flex, md-theme="red")
 			p Radnik:
-			//- h2 Alija Sirotanovic
 			p Jos nije izabran
 	
 	md-divider

@@ -1,0 +1,22 @@
+md-dialog
+	md-content 
+		p Posao br: {{ item.id }} - {{ item.name }}
+		
+		h2 Prijavljivanje na posao 
+
+		h4 Vazno je da znas sta znaci prijaviti se na posao! 
+
+		p Ako te poslodavac odabere, stici ce ti obavestenje da si izabran za dati posao. 
+
+		p Uz to objasnjenje dolaze i instrukcije o tome kako početi sa izvršavanjem posla. 
+
+		p.lead Od tog trenutka ti si odgovoran za taj posao, i tvoja reputacija će snositi posledice ako posao ne bude urađen kako treba. 
+
+	.md-actions(layout="row", layout-align="end center")	
+		md-button(ng-click="dismiss()") Necu ovo radim
+		md-button.md-raised.md-primary(md-theme="green", ng-click="action(item)")
+			h4 OK, prijavljujem se
+
+
+
+		

@@ -3,6 +3,8 @@ angular.module \appls .service \workerAPI (jobs, Restangular) !->
 	@detail = jobs.detail
 	@applied = jobs.applied 
 	@assigned-jobs = jobs.assigned
+	@apply = -> it.customPost \/apply
+
 
 angular.module \appls .directive \workerJob -> do
 	restrict: \E
@@ -10,7 +12,6 @@ angular.module \appls .directive \workerJob -> do
 	scope: 
 		job: \=
 	
-
 
 angular.module \appls .config ($state-provider, $url-router-provider, state-helper-provider) !->
 	$url-router-provider.when \/radnik/dom \/radnik/dom/sweet	
@@ -54,8 +55,6 @@ angular.module \appls .config ($state-provider, $url-router-provider, state-help
 	)
 
 
-
-
 	state \radnik.job (do 
 		url: \/posao
 		templateUrl: \radnik/job/base.html
@@ -64,7 +63,14 @@ angular.module \appls .config ($state-provider, $url-router-provider, state-help
 	state \radnik.job.detail (do
 		url: '/:id'
 		templateUrl: \radnik/job/detail.html 
-		controller: \detail-ctrl
+		controller: \action-ctrl
 		resolve:
 			source: (workerAPI) -> workerAPI.detail
-		)
+			modal: -> 
+				templateUrl: \radnik/job/apply.html
+				controller: \modal-action-ctrl		
+				locals: 
+					action: (item) -> item.customPOST {} \apply 
+	)
+
+

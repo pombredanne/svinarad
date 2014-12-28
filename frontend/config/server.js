@@ -122,6 +122,12 @@ function get(app, url, data) {
 	});
 }
 
+function post(app, url, data) {
+	app.post(url, function (req, res) {
+		res.json(data);
+	});
+}
+
 module.exports = {
     drawRoutes: function(app) {
     	app.get('/api/job/owned', function(req, res) {
@@ -146,7 +152,7 @@ module.exports = {
     	
     	get(app, '/api/job/:id', job_w_staus(getStatus()));
 
-    	get(app, '/api/job/:id/apply', job_w_staus(getStatus()));
+    	post(app, '/api/job/:id/apply', job_w_staus(getStatus()));
 
     	app.get('/api/job/:id/applicants', function(req, res) {
 	  	 	res.json(radnom_applicants(1, 5));
