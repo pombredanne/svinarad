@@ -4,7 +4,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 SECRET_KEY = 't%93=f_pslv69z4=cfzh5#ngy6iezxb_#h9@(z!t4dw3jo4!)q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -24,6 +23,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rad',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,0 +1,14 @@
+Backend: 
+
+Instaliraj 
+Pytest
+Django-Pytest
+Pytestpythonpath 
+
+Probaj da implementiras test fsm 
+
+Model Job
+  name: Char
+  status: FSM
+
+dva statusa
